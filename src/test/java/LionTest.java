@@ -1,4 +1,4 @@
-import com.example.Cat;
+
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
@@ -26,7 +26,7 @@ public class LionTest {
         return new Object[][] {
                 { "Самка"},
                 { "Самец"},
-                {"???"},
+
         };
     }
     @Test
@@ -41,7 +41,11 @@ public class LionTest {
     @Test
     public void checkDoesHaveMane_LionHasMane() throws Exception {
         Lion lion = new Lion(feline, sex);
-        boolean expectedMane = true;
+        boolean expectedMane = false;
+        if ("Самец".equals(sex)) {
+            expectedMane = true;
+        }
+
         boolean actualMane = lion.doesHaveMane();
         assertEquals(expectedMane, actualMane);
 

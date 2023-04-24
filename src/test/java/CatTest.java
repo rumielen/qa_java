@@ -41,8 +41,7 @@ public class CatTest {
         List<String> expectedEat = Arrays.asList("Животные", "Птицы", "Рыба");
         Feline feline = Mockito.mock(Feline.class);
         Cat cat = new Cat(feline);
-        Cat catSpy = Mockito.spy(cat);
-        List<String> actualEat = catSpy.getFood();
+        List<String> actualEat = cat.getFood();
         assertEquals(expectedEat, actualEat);
 
 }
